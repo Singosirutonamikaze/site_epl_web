@@ -1,0 +1,177 @@
+/* Style général */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #022ba8;
+}
+
+header img {
+  display: block;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* Style des onglets */
+
+.tab-container {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 4px solid rgb(224, 223, 228);
+  margin-bottom: 50px;
+}
+
+.tabs {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  gap: 10px;
+}
+
+.tab-button {
+  padding: 15px 30px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.1s;
+}
+
+.tab-button:hover {
+  border: 4px solid rgb(232, 233, 240);
+  border-radius: 20px;
+}
+
+.tab-button.active {
+  border-bottom: 3px solid #2196F3;
+  color: #2196F3;
+  font-weight: bold;
+}
+
+
+/* Contenu des onglets */
+
+.tab-content {
+  display: none;
+  padding: 25px;
+  line-height: 1.6;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+
+/* Style de la liste */
+
+.bourse-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bourse-list li {
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.bourse-list li:before {
+  content: "✔️";
+  color: #020802;
+  position: absolute;
+  left: 0;
+}
+
+
+/* Tableau comparatif */
+
+.comparaison-table {
+  width: 100%;
+  margin-top: 30px;
+  border-collapse: collapse;
+  border-radius: 30px;
+  border: 4px solid rgb(231, 231, 233);
+}
+
+.comparaison-table td, .comparaison-table th {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.comparaison-table th {
+  background-color: #2196F3;
+  color: white;
+}
+
+
+/* Style du formulaire d'orientation */
+
+.orientation {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 4px solid rgb(22, 4, 92);
+}
+
+.orientation h2 {
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+.orientation label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.orientation input[type="number"], .orientation input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.orientation input[type="submit"] {
+  background: #004080;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.orientation input[type="submit"]:hover {
+  background: #003060;
+}
+
+.orientation .result {
+  margin-top: 20px;
+  padding: 15px;
+  background: #e8f4ff;
+  border-left: 4px solid #2196F3;
+  border-radius: 3px;
+  display: none;
+}
+
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .tabs {
+    flex-direction: column;
+  }
+}

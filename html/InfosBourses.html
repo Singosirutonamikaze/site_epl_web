@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Options de Bourses</title>
+  <link rel="stylesheet" href="../css/InfosBourses.css">
+  <link rel="stylesheet" href="../css/InfosBourses.js">
+</head>
+<body>
+  <header>
+    <img src="https://gnatepe.com/wp-content/uploads/2023/08/Togo-Concours-dentree-a-lEcole-Polytechnique-de-Lome-EPL-2023-2024.jpg" alt="Togo : Concours d'entrée à l'École Polytechnique de Lomé (EPL) 2023-2024">
+    <nav>
+      <!-- Navigation si nécessaire -->
+    </nav>
+  </header>
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab-button active" onclick="openTab(event, 'interne')">Bourses Internes</button>
+      <button class="tab-button" onclick="openTab(event, 'externe')">Bourses Externes</button>
+    </div>
+
+    <div id="interne" class="tab-content active">
+      <ul class="bourse-list">
+        <li>Réservées aux meilleurs étudiants (top 20-30%)</li>
+        <li>Attribution souvent automatique</li>
+        <li>Couverture partielle des frais (13.4093%)</li>
+        <li>Renouvellement sous conditions</li>
+        <li>Ex: Bourse d'excellence, Bourse de mérite</li>
+      </ul>
+    </div>
+
+    <div id="externe" class="tab-content">
+      <ul class="bourse-list">
+        <li>Ouvertes à tous les profils éligibles</li>
+        <li>Candidature complexe requise</li>
+        <li>Couverture totale possible</li>
+        <li>Compétition internationale</li>
+        <li>Ex: Erasmus+, Chevening, Fulbright</li>
+      </ul>
+    </div>
+
+    <table class="comparaison-table">
+      <tr>
+        <th>Critère</th>
+        <th>Interne</th>
+        <th>Externe</th>
+      </tr>
+      <tr>
+        <td>Taux de réussite</td>
+        <td>15-20%</td>
+        <td>2-5%</td>
+      </tr>
+      <tr>
+        <td>Délai moyen</td>
+        <td>1 an</td>
+        <td>3-6 mois</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Formulaire d'orientation vers la bourse adaptée -->
+  <div class="orientation">
+    <h2>Découvrez la bourse qui vous convient</h2>
+    <form id="bourseForm">
+      <label for="moyenne">Votre moyenne :</label>
+      <input type="number" id="moyenne" step="0.01" placeholder="Exemple : 15.5" required>
+      
+      <label>
+        <input type="checkbox" id="sportif">
+        Je pratique une activité sportive
+      </label>
+      <label>
+        <input type="checkbox" id="engagement">
+        Je suis engagé dans des actions communautaires
+      </label>
+      
+      <input type="submit" value="Voir ma bourse">
+    </form>
+    <div id="result" class="result">
+      <p id="resultText"></p>
+    </div>
+  </div>
+</body>
+</html>
