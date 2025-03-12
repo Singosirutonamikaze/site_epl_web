@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Roboto Bold";
+    src: url(../static/Roboto-Bold.ttf);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.titre-partie{
+    background: linear-gradient(to bottom, transparent, black), url(../image/image.png);
+    height: 100vh;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-family: "Roboto Bold";
+    font-weight: 700;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.792);
+}
+
+.titre-partie button{
+    height: 5vh;
+    border-radius: 10px;
+    padding: 20px;
+    font-family: "Roboto Bold";
+    background-color: aliceblue;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7em;
+    gap: 7px;
+    border: none;
+    cursor: pointer;
+    transition: box-shadow .5s;
+}
+
+.titre-partie button:hover{
+    box-shadow: 3px 3px 5px rgb(0, 0, 24);
+}
+
+.titre-partie button img{
+    height: 3vh;
+}
