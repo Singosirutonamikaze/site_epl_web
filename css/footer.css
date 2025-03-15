@@ -224,43 +224,50 @@ Styles pour le copyright et les liens légaux*/
     color: rgba(255, 255, 255, 0.3);
 }
 
-/*BOUTON RETOUR EN HAUT
-Styles pour la fonctionnalité du bouton retour en haut */
+/* Modification du bouton de retour en haut */
 .back-to-top {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    width: 50px;
-    height: 50px;
-    background:linear-gradient( rgb(0, 188, 245), #ffffff, #727272); /* Couleur de fond */
+    width: 45px;
+    height: 45px;
+    background: #f8c100; /* Utilisation de la couleur d'accent de votre site */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    opacity: 0.85;
+    opacity: 0;
+    visibility: hidden; /* Masqué par défaut */
     z-index: 999;
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-#backToTopButton.show {
+.back-to-top.show {
     opacity: 1;
+    visibility: visible;
 }
 
 .back-to-top:hover {
-    opacity: 1;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 .back-to-top-icon {
     width: 20px;
     height: 20px;
     fill: none;
-    stroke: #00457c;
-    stroke-width: 2;
+    stroke: #00457c; /* Couleur de fond du footer */
+    stroke-width: 2.5;
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: stroke 0.3s ease;
+}
+
+.back-to-top:hover .back-to-top-icon {
+    stroke: #f8c100;
 }
 hr {
     border-color: #7ed6df;
