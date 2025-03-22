@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Encodage et compatibilité -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <meta name="description" content="Description de votre page pour les moteurs de recherche.">
+  <meta name="keywords" content="mot-clé1, mot-clé2, mot-clé3">
+  <meta name="author" content="Nom de l'auteur ou de l'entreprise">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.votre-site.com">
+
+  <!-- Open Graph pour le partage sur les réseaux sociaux -->
+  <meta property="og:title" content="Titre de la page">
+  <meta property="og:description" content="Description de votre page pour les réseaux sociaux.">
+  <meta property="og:image" content="https://www.votre-site.com/image.jpg">
+  <meta property="og:url" content="https://www.votre-site.com">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@votreCompteTwitter">
+  <meta name="twitter:title" content="Titre de la page">
+  <meta name="twitter:description" content="Description de votre page pour Twitter.">
+  <meta name="twitter:image" content="https://www.votre-site.com/image.jpg">
+
+  <!-- Liens<link rel="stylesheet" href="styles.css"> vers les feuilles de style et polices -->
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/accueil.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/toggle.css">
+  <link rel="stylesheet" href="../css/actuEvent.css">
+  <link rel="stylesheet" href="../css/actuEvnentResponsive.css">
+  <link rel="stylesheet" href="../css/InfosBourses.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Titre de la page -->
+  <title>Epl_web_site</title>
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <header class="main-header" data-delay="200" data-animation="fade-in">
+    <div class="header-content">
+      <a href="#" class="brand-logo">
+        <img src="../Image/logoul.png" alt="Logo EPL" class="logoul">
+      </a>
+
+      <nav class="header-nav">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="accueil.html" class="nav-link">
+              <i class="fa fa-home nav-icon"></i>
+              <span class="link-text">Accueil</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa fa-hospital-user nav-icon"></i>
+              <span class="link-text">Espace étudiant</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa fa-edit nav-icon"></i>
+              <span class="link-text">Admission</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fa fa-clipboard-check nav-icon"></i>
+              <span class="link-text">Bourses</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <button class="hamburger-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- From Uiverse.io by JkHuger -->
+      <label>
+        <input class="toggle-checkbox" type="checkbox">
+        <div class="toggle-slot">
+          <div class="sun-icon-wrapper">
+            <div class="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>
+          </div>
+          <div class="toggle-button"></div>
+          <div class="moon-icon-wrapper">
+            <div class="iconify moon-icon" data-icon="feather-moon" data-inline="false"></div>
+          </div>
+        </div>
+      </label>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- Section 1 -->
+    <section class="pt-24 pb-20 bg-gradient-to-b from-blue-900/50 to-indigo-900/50 h-[80vh] section-one" data-animation="fade-in" data-delay="300"
+      id="sectionOne">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center h-full flex flex-col justify-center">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 animate-fade-in">
+          École Polytechnique de Lomé
+        </h1>
+        <p class="text-xl text-blue-200 mb-12 max-w-3xl mx-auto">
+          Centre d'excellence en ingénierie et technologie depuis 2021
+        </p>
+      </div>
+    </section>
+
+    <!-- Présentation -->
+    <section class="py-20 container mx-auto px-4" data-delay="400" data-animation="zoom-in">
+      <h1 class="text-4xl font-bold text-center mb-12">
+        Présentation de l'École Polytechnique de Lomé
+        (<abbr title="Ecole Polytechnique de Lomé" class="no-underline">EPL</abbr>)
+      </h1>
+      <div class="presentation">
+        <img src="../Image/Epl.jpeg" alt="Image EPL" class="imgepl">
+        <p class="text-3xl text-gray-600 text-justify">
+          L'École Polytechnique de Lomé (EPL), sise à l'Université de Lomé, est issue de la fusion de l'École
+          Nationale des Sciences de l'Ingénieur (ENSI) créée en Septembre 1970 et du Centre Informatique et de
+          Calcul (CIC) créé le 25 Septembre 1988, officialisée le 23 Septembre 2022 lors du conseil des ministres.
+          L'EPL s'est rapidement imposée comme un centre de formation de référence, formant des ingénieurs de
+          qualité dans divers domaines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Départements -->
+    <section id="formations" class="py-20 bg-blue-50" data-delay="600" data-animation="fade-left">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl font-bold text-center mb-12">Les différents domaines de formations</h1>
+        <div class="formation ">
+          <div class="form hover:shadow-lg hover:scale-105 transition-transform hover:border-blue-500">
+            <h2 class="text-2xl font-bold mb-4">Licences Fondamentales</h2>
+            <ul class="space-y-2">
+              <li>• Génie Civil</li>
+              <li>• Génie Électrique</li>
+              <li>• Génie Mécanique</li>
+              <li>• Logistiques et Transports</li>
+              <li>• Informatique & Systeme</li>
+              <li>• Intelligence Artificielle et Big Data</li>
+            </ul>
+          </div>
+
+          <div class="form hover:shadow-lg hover:scale-105 transition-transform hover:border-blue-500">
+            <h2 class="text-2xl font-bold mb-4">Licences Professionnelles</h2>
+            <ul class="space-y-2">
+              <li>• Génie Civil</li>
+              <li>• Génie Électrique</li>
+              <li>• Génie Mécanique</li>
+              <li>• Génie Logiciel</li>
+              <li>• Systèmes et Réseaux Informatiques</li>
+            </ul>
+          </div>
+          <div class="form hover:shadow-lg hover:scale-105 transition-transform hover:border-blue-500">
+            <h2 class="text-2xl font-bold mb-4">Masters Professionnels</h2>
+            <ul class="space-y-2">
+              <li>• Génie Civil</li>
+              <li>• Génie Électrique</li>
+              <li>• Génie Mécanique</li>
+              <li>• Informatique & Système</li>
+            </ul>
+          </div>
+        </div>
+    </section>
+
+    <!-- Vie Étudiante -->
+    <section id="vie-etudiante" class="py-20 container mx-auto px-4" data-delay="800" data-animation="fade-right">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold">Espace Etudiant</h2>
+      </div>
+
+      <!-- Système d'onglets -->
+      <div class="tabs-container">
+        <ul class="flex justify-center gap-4 border-b mb-8">
+          <li class="tab-item active px-4 py-2 cursor-pointer border-b-4 border-blue-500" data-target="events">
+            Évènements</li>
+          <li class="tab-item px-4 py-2 cursor-pointer" data-target="espace">Espace Étudiant</li>
+          <li class="tab-item px-4 py-2 cursor-pointer" data-target="info">Informations</li>
+        </ul>
+
+        <!-- Contenu des onglets -->
+        <div id="events" class="tab-content active">
+          <p class="text-center">Calendrier des évènements et concours...</p>
+        </div>
+
+        <div id="espace" class="tab-content hidden">
+          <!-- Contenu des niveaux -->
+          <div class="space-y-8">
+            <!-- Niveau 1 -->
+            <div class="level-card">
+              <div class="flex items-center mb-4">
+                <img src="Image/Capture.PNG" alt="Logo EPL" class="w-24 mr-4">
+                <h3 class="text-2xl font-bold">Niveau 1</h3>
+              </div>
+              <div class="grid md:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <button class="btn-action">Calendrier</button>
+                  <button class="btn-action">Règlement</button>
+                  <button class="btn-action">Formulaire</button>
+                </div>
+                <img src="Image/level 1.png" alt="Niveau 1" class="rounded-lg">
+              </div>
+            </div>
+
+            <div id="events" class="hidden p-4 bg-gray-50 rounded-b-xl active">
+            </div>
+          </div>
+
+          <div id="espace" class="hidden p-4 bg-gray-50 rounded-b-xl">
+            <p class="text-center">Informations supplémentaires...</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- Actualités -->
+    <section class="py-12 bg-gray-50" data-delay="1000" data-animation="fade-in">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Actualités</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 1" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 1</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 1...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 2" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 2</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 2...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 3" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 3</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 3...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 4" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 4</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 4...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 5" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 5</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 5...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+          <div class="news-card bg-white shadow rounded-lg overflow-hidden">
+            <img src="Image/actualite1.jpg" alt="Actualité 5" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-4">Titre de l'actualité 5</h3>
+              <p class="text-gray-600 mb-4">Description de l'actualité 5...</p>
+              <a href="#" class="text-blue-500 hover:underline">Lire la suite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Concours et Bourses -->
+    <section id="concours" class="py-20 bg-blue-900 text-white" data-delay="1200" data-animation="fade-left">
+      <div class="container mx-auto px-4 p-8">
+        <h2 class="text-4xl font-bold text-center mb-12">Concours et Bourses</h2>
+
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Calendrier</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Règlement</button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">Formulaire</button>
+        <div class="bourse-card bg-white/10 p-6 rounded-xl">
+          <h3 class="text-xl font-bold mb-4">Bourses Internes</h3>
+          <ul class="list-disc pl-5">
+            <li>Top 20-30% des étudiants</li>
+            <li>Couverture partielle</li>
+            <li>Renouvellement conditionnel</li>
+          </ul>
+        </div>
+
+        <div id="info" class="hidden p-4 bg-gray-50 rounded-b-xl">
+          <h3 class="text-xl font-bold mb-4">Bourses Externes</h3>
+          <ul class="list-disc pl-5">
+            <li>Compétition internationale</li>
+            <li>Couverture totale possible</li>
+            <li>Ex: Erasmus+, Chevening</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="container mx-auto flex flex-col md:flex-row gap-8 p-8" data-delay="1400" data-animation="fade-right">
+        <!-- Formulaire à gauche -->
+        <div class="w-full md:w-1/2 bg-white p-8 rounded-xl text-gray-800 shadow">
+          <h2 class="text-2xl font-bold mb-6">Vérifier mon éligibilité</h2>
+          <form id="bourseForm" class="space-y-6">
+            <div class="space-y-2">
+              <label class="block">Note d'Anglais</label>
+              <input type="number" id="anglais" step="0.1" class="w-full p-2 border rounded" required>
+            </div>
+            <div class="space-y-2">
+              <label class="block">Note de Maths</label>
+              <input type="number" id="maths" step="0.1" class="w-full p-2 border rounded" required>
+            </div>
+            <div class="space-y-2">
+              <label class="block">Note de Physique</label>
+              <input type="number" id="physique" step="0.1" class="w-full p-2 border rounded" required>
+            </div>
+            <button type="submit" class="btn-action w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
+              Vérifier mon éligibilité
+            </button>
+          </form>
+        </div>
+
+        <!-- Résultats à droite : 3 carrés -->
+        <div class="w-full md:w-1/2 flex flex-col gap-4">
+          <div id="eligibleBox" class="result-box p-6 bg-white rounded-xl shadow border border-gray-300 text-center">
+            <h3 class="text-xl font-bold">Eligible</h3>
+          </div>
+          <div id="neutralBox" class="result-box p-6 bg-white rounded-xl shadow border border-gray-300 text-center">
+            <h3 class="text-xl font-bold">Neutre</h3>
+          </div>
+          <div id="nonEligibleBox" class="result-box p-6 bg-white rounded-xl shadow border border-gray-300 text-center">
+            <h3 class="text-xl font-bold">Non Eligible</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+  <!-- Footer -->
+  <footer class="footer" id="footer" data-animation="fade-up" data-delay="1600">
+    <div class="footer-container">
+      <!-- Colonne 1: Logo & Réseaux Sociaux -->
+      <div class="footer-column">
+        <div class="footer-logo">
+          <img src="LogoEPL.png" alt="Logo EPL" class="footer-logo-img">
+          <p class="footer-slogan">Formation d'ingénieurs d'excellence</p>
+        </div>
+        <div class="footer-social">
+          <a href="https://tr.ee/Nsa4Pq2EJ6" class="social-link" aria-label="Facebook">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://twitter.com/Epl_Univlome" class="social-link" aria-label="Twitter">
+            <svg class="social-icon" viewBox="0 0 1200 1227">
+              <path
+                d="M714.163 519.284 1160.89 0h-105.86L667.137 450.887 357.328 0H0l468.492 681.821L0 1226.37h105.866l409.625-476.152 327.181 476.152H1200L714.137 519.284h.026ZM569.165 687.828l-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721H892.476L569.165 687.854v-.026Z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://tr.ee/duaPZBWeW3" class="social-link" aria-label="LinkedIn">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </a>
+          <a href="https://instagram.com/epl" class="social-link" aria-label="Instagram">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+          <a href="https://tr.ee/EcmdW56Dw4" class="social-link" aria-label="YouTube">
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <!-- Colonne Navigation Rapide -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Navigation Rapide</h3>
+        <ul class="footer-links">
+          <li><a href="/actualites" class="footer-link">Actualités</a></li>
+          <li><a href="/stages" class="footer-link">Offres de Stages</a></li>
+          <li><a href="/concours" class="footer-link">Concours</a></li>
+          <li><a href="/formations" class="footer-link">Formations</a></li>
+          <li><a href="/recherche" class="footer-link">Recherche</a></li>
+        </ul>
+      </div>
+      <!-- Colonne Ressources -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Ressources</h3>
+        <ul class="footer-links">
+          <li><a href="/candidatures" class="footer-link">Candidatures</a></li>
+          <li><a href="/vie-etudiante" class="footer-link">Vie Étudiante</a></li>
+          <li><a href="/international" class="footer-link">International</a></li>
+          <li><a href="/alumni" class="footer-link">Réseau Alumni</a></li>
+          <li><a href="/contact" class="footer-link">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Colonne Contact -->
+      <div class="footer-column">
+        <h3 class="footer-heading">Contactez-nous</h3>
+        <address class="footer-contact">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <strong>Adresse:</strong><br>
+              Boulevard Eyadéma, Lomé, Togo
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <strong>Boîte postale:</strong><br>
+              BP 1383, Lomé, Togo
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <strong>Téléphone:</strong><br>
+              +228 22 25 66 42
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" class="icon">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <strong>Email:</strong><br>
+              <a href="mailto:epl_ul@univ-lome.tg" class="contact-email">epl_ul@univ-lome.tg</a>
+            </div>
+          </div>
+        </address>
+      </div>
+    </div>
+    <hr class="my-4">
+    <div class="footer-bottom">
+      <p class="copyright">
+        © 2025 École Polytechnique de Lomé. Tous droits réservés.
+      </p>
+      <div class="legal-links">
+        <a href="mentions-legales" class="legal-link">Mentions Légales</a>
+        <span class="link-separator">|</span>
+        <a href="/politique-confidentialite" class="legal-link">Politique de Confidentialité</a>
+      </div>
+    </div>
+    <a href="#top" class="back-to-top" aria-label="Retour en haut de page">
+      <svg viewBox="0 0 24 24" class="back-to-top-icon">
+        <path d="M18 15l-6-6-6 6"></path>
+      </svg>
+    </a>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../js/accueil.js"></script>
+  <script src="../js/InfosBourses.js"></script>
+  <script src="../js/$actuEvent.js"></script>
+  <script src="../js/bg-dynamique.js"></script>
+  <script src="../js/animation.js"></script>
+</body>
+
+</html>
