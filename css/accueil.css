@@ -1,0 +1,432 @@
+/* Variables CSS pour une maintenance facile */
+
+:root {
+    --primary-color: #2c7be5;
+    --secondary-color: #0d0f2c;
+    --text-color: #333;
+    --background-hover: #f8f9fa;
+    --transition-speed: 0.3s;
+}
+
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0 2rem;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-radius: 4px 4px 4px 4px;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    list-style: none;
+    position: relative;
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    transition: all var(--transition-speed) ease;
+}
+
+.nav-item:hover {
+    background: var(--background-hover);
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    width: 24px;
+    text-align: center;
+}
+
+.brand-logo img {
+    height: 55px;
+    transition: transform var(--transition-speed) ease;
+}
+
+.brand-logo:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Version mobile améliorée */
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.hamburger-btn i {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+}
+
+.hamburger-btn:hover {
+    background: var(--background-hover);
+}
+
+.mobile-menu-active .nav-menu {
+    transform: translateX(0);
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0 1rem;
+    }
+    .hamburger-btn {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        width: 300px;
+        height: calc(100vh - 80px);
+        background: #ffffff;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1.5rem 0;
+        transform: translateX(100%);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto;
+    }
+    .nav-item {
+        width: 100%;
+        padding: 1rem 2rem;
+        margin: 0;
+        border-radius: 0;
+    }
+    .nav-item:hover {
+        background: var(--background-hover);
+    }
+    .nav-link {
+        padding: 0;
+        font-size: 1rem;
+    }
+    /* Overlay pour le menu mobile */
+    .nav-menu::before {
+        content: '';
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 80px);
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .mobile-menu-active .nav-menu::before {
+        opacity: 1;
+    }
+}
+
+
+/* Variables */
+
+:root {
+    --primary-color: #2c38e5;
+    --secondary-color: #0d0f2c;
+    --text-color: #333;
+    --background: #f8f9fa;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Reset et base */
+
+body {
+    margin-top: 8px;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+    padding: 0% 1%;
+    color: var(--text-color);
+    background-color: var(--background);
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+/* Header */
+
+.header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.logo img {
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.search {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.srch {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    transition: border-color 0.3s ease;
+}
+
+.srch:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.searchbtn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.searchbtn:hover {
+    background: #1a5bb7;
+}
+
+.headertext {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    padding: 1rem;
+    border-top: 2px solid #eee;
+    margin-top: 1rem;
+}
+
+
+/* Section Présentation */
+
+.presentation {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 3rem;
+}
+
+.imgepl {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+
+/* Section Départements */
+
+.formation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.form {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    list-style: none;
+}
+
+.form h1 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.form li {
+    padding: 0.5rem 0;
+    transition: transform 0.3s ease;
+}
+
+.form li:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .search {
+        order: 3;
+    }
+    .presentation {
+        grid-template-columns: 1fr;
+    }
+    .formation {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 1rem;
+    }
+    .search {
+        flex-direction: column;
+    }
+    .srch {
+        width: 100%;
+    }
+}
+
+
+/* Typographie */
+
+.h1 {
+    color: var(--secondary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.tep {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.section-one {
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+}
+
+
+/* animations.css */
+
+[data-animate] {
+    transition-property: opacity, transform;
+    will-change: opacity, transform;
+}
+
+
+/* Variantes d'animations */
+
+.animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

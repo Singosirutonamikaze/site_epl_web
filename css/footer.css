@@ -1,0 +1,290 @@
+/*STYLES DE BASE DU PIED DE PAGE
+Configuration de base pour l'ensemble de la section du pied de page */
+.footer {
+    background-color: #00457c;
+    color: #ffffff;
+    padding: 4rem 2rem 2rem;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*MISE EN PAGE DU PIED DE PAGE
+Disposition en grille pour les colonnes du pied de page*/
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*SECTION LOGO ET SLOGAN
+Stylisation du logo et du slogan associé*/
+.footer-logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo-img {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.footer-slogan {
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/*ICÔNES DES RÉSEAUX SOCIAUX
+Stylisation et interaction pour les liens des réseaux sociaux*/
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #f8c100;
+    transform: translateY(-3px);
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #ffffff;
+    opacity: 1;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+.social-link:hover .social-icon {
+    stroke: #00457c;
+    background-color: #f8c100; /* Couleur de fond au survol */
+    transform: translateY(-3px); /* Légère élévation au survol */
+    opacity: 1;
+}
+
+/*TITRES DES COLONNES
+Stylisation des titres de section avec effet de soulignement*/
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #f8c100;
+    border-radius: 2px;
+}
+
+/*LIENS DE NAVIGATION DU PIED DE PAGE
+Stylisation des liens cliquables avec effets de survole */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.footer-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    background-color: #f8c100;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #f8c100;
+    padding-left: 1.2rem;
+}
+
+.footer-link:hover::before {
+    width: 8px;
+    height: 8px;
+}
+
+/*INFORMATIONS DE CONTACT
+Stylisation des détails de contact et des icônes*/
+.footer-contact {
+    font-style: normal;
+}
+
+.contact-item {
+    display: flex;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    margin-right: 0.8rem;
+    min-width: 24px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #f8c100;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-email {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-email:hover {
+    color: #f8c100;
+    text-decoration: underline;
+}
+
+/*SECTION BASSE DU PIED DE PAGE
+Styles pour le copyright et les liens légaux*/
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.legal-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.legal-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.legal-link:hover {
+    color: #f8c100;
+}
+
+.link-separator {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/*BOUTON RETOUR EN HAUT
+Styles pour la fonctionnalité du bouton retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    background:linear-gradient( rgb(0, 188, 245), #ffffff, #727272); /* Couleur de fond */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    opacity: 0.85;
+    z-index: 999;
+}
+
+#backToTopButton.show {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.back-to-top-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: #00457c;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+hr {
+    border-color: #7ed6df;
+    width: 50%;
+    opacity: 50%
+}
+
+
+/* Media queries pour responsivité */
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem 6rem;
+    }
+    
+    .footer-container {
+        gap: 2rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .legal-links {
+        justify-content: center;
+    }
+}
