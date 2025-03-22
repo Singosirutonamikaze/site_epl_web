@@ -1,0 +1,41 @@
+.chambre-statistiques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+
+.element-statistique {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.element-statistique:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.icones-statistique {
+    font-size: 2.5rem;
+    color: darkblue;
+    margin-bottom: 20px;
+}
+.nombres-statistique {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: rgb(50, 215, 0);
+    margin-bottom: 10px;
+}
+
+.texte-statistique {
+    color: gray;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+
