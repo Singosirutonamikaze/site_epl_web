@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://votre-domaine.tg/sitemap.xml

@@ -1,0 +1,21 @@
+{
+  "name": "École Polytechnique de Lomé",
+  "short_name": "EPL",
+  "description": "Site officiel de l'École Polytechnique de Lomé",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#003366",
+  "icons": [
+    {
+      "src": "/assets/images/logos/logoepl.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logos/logoepl.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
