@@ -17,7 +17,7 @@
    FOOTER RÉUTILISABLE
    =================== */
 .footer-principal {
-    /* Position et layout */
+    /* Position et layouts */
     position: relative;
     margin-left: var(--largeur-sidebar); /* S'adapte automatiquement au sidebar */
     width: calc(100% - var(--largeur-sidebar)); /* Occupe l'espace restant */
