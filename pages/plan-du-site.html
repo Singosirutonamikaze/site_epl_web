@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités - École Polytechnique de Lomé</title>
-    <meta name="description"
-        content="Découvrez les dernières actualités et événements de l'École Polytechnique de Lomé.">
+    <title>Plan du site - École Polytechnique de Lomé</title>
+    <meta name="description" content="Plan du site de l'École Polytechnique de Lomé.">
 
     <!-- Manifest PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -41,8 +40,8 @@
                 <div class="dev-content">
                     <div class="dev-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <path d="M8 6h8M8 10h8M8 14h5" />
+                            <path d="M3 3h18v18H3zM9 9h6v6H9z" />
+                            <path d="M9 3v6M15 3v6M9 15v6M15 15v6" />
                         </svg>
                     </div>
                     <h1 class="dev-titre">Page en développement</h1>
@@ -117,10 +116,10 @@
     <script src="/js/pages/dashboard.js"></script>
     <script src="/js/main.js"></script>
 
-    <!-- Script de gestion du sidebar pour actualites -->
+    <!-- Script de gestion du sidebar pour plan-du-site -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('🚀 Page Actualités chargée');
+            console.log('🚀 Page Plan du site chargée');
 
             // Charger le composant sidebar
             fetch('/components/sidebar.html')
@@ -128,20 +127,13 @@
                 .then(html => {
                     document.getElementById('sidebar-container').innerHTML = html;
 
-                    // Marquer le lien Actualités comme actif
-                    const actualitesLink = document.querySelector('a[href="/pages/actualites.html"]');
-                    if (actualitesLink) {
-                        actualitesLink.classList.add('actif');
-                        actualitesLink.setAttribute('aria-current', 'page');
-                    }
-
                     // Initialiser le gestionnaire de sidebar
                     if (typeof SidebarManager !== 'undefined') {
                         window.sidebarManager = new SidebarManager();
                         console.log('✅ Gestionnaire de sidebar initialisé');
                     }
 
-                    console.log('✅ Page Actualités initialisée avec succès');
+                    console.log('✅ Page Plan du site initialisée avec succès');
                 })
                 .catch(error => {
                     console.error('❌ Erreur lors du chargement du sidebar:', error);
