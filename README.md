@@ -22,7 +22,7 @@
 Les étudiants togolais peinent à trouver des informations claires sur les formations d'ingénierie, les procédures d'admission et les opportunités académiques. Notre solution : **un portail web moderne qui démocratise l'accès à l'éducation supérieure d'excellence créée en 2022 par la fusion de l'ENSI et du CIC**.
 
 ```
-🎯 PROBLÈME RÉSOLU
+  PROBLÈME RÉSOLU
 ┌─────────────────────────────────────────┐
 │  ❌ Information dispersée               │
 │  ❌ Processus d'admission complexes     │
@@ -94,14 +94,14 @@ python -m http.server 8000
 ### Étape 1 : Découverte des formations
 ```bash
 # Explorer nos 8 programmes d'excellence
-📚 Informatique & Systèmes (IS)     → Développement & IA
-🏗️ Génie Civil (GC)                 → Construction durable  
-⚡ Génie Électrique (GE)            → Énergies renouvelables
-🔧 Génie Mécanique (GM)             → Innovation industrielle
-🤖 Intelligence Artificielle & Big Data → IA & Data Science
-🚚 Logistique & Transport (LT)      → Supply Chain
-💻 Génie Logiciel (GL)              → Développement avancé
-🌐 Systèmes & Réseaux Informatiques → Infrastructure IT
+📚 Informatique & Systèmes (IS)     => Développement & IA
+🏗️ Génie Civil (GC)                 => Construction durable  
+⚡ Génie Électrique (GE)            => Énergies renouvelables
+🔧 Génie Mécanique (GM)             => Innovation industrielle
+🤖 Intelligence Artificielle & Big Data => IA & Data Science
+🚚 Logistique & Transport (LT)      => Supply Chain
+💻 Génie Logiciel (GL)              => Développement avancé
+🌐 Systèmes & Réseaux Informatiques => Infrastructure IT
 ```
 
 ### Étape 2 : Découverte interactive
@@ -126,9 +126,9 @@ python -m http.server 8000
 
 ###  Et maintenant ?
 
-- **📅 Planifier une visite** → [Calendrier en ligne](pages/admission/calendrier.html)
-- **💬 Poser vos questions** → [Contact direct](pages/contact.html)
-- **📋 Candidater maintenant** → [Formulaire d'inscription](pages/admission/inscription.html)
+- **📅 Planifier une visite** => [Calendrier en ligne](pages/admission/calendrier.html)
+- **💬 Poser vos questions** => [Contact direct](pages/contact.html)
+- **📋 Candidater maintenant** => [Formulaire d'inscription](pages/admission/inscription.html)
 
 ---
 
@@ -149,7 +149,7 @@ python -m http.server 8000
 }
 ```
 **✨ Promesse :** Thèmes clair/sombre avec transition fluide  
-[En savoir plus →](css/base/variables.css)
+[En savoir plus =>](css/base/variables.css)
 
 ### 🧩 Architecture Modulaire
 ```javascript
@@ -161,7 +161,7 @@ fetch('/components/sidebar.html')
   });
 ```
 **Promesse :** Composants réutilisables, maintenance simplifiée  
-[En savoir plus →](components/)
+[En savoir plus =>](components/)
 
 ### 📱 Responsive by Design
 ```html
@@ -172,7 +172,7 @@ fetch('/components/sidebar.html')
 </div>
 ```
 **📱 Promesse :** Parfait sur mobile, tablette et desktop  
-[En savoir plus →](css/layout/)
+[En savoir plus =>](css/layouts/)
 
 ### ⚡ Performance Optimisée
 ```javascript
@@ -182,7 +182,7 @@ const formations = await loadJSONData('/assets/data/formations.json');
 localStorage.setItem('theme-prefere-epl', 'sombre');
 ```
 **⚡ Promesse :** Chargement instantané, expérience fluide  
-[En savoir plus →](js/utils/)
+[En savoir plus =>](js/utils/)
 
 ### 🔒 Sécurité & Validation
 ```php
@@ -191,7 +191,7 @@ $data = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 $sanitized = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
 ```
 **🛡️ Promesse :** Données protégées, formulaires sécurisés  
-[En savoir plus →](api/)
+[En savoir plus =>](api/)
 
 ---
 
@@ -204,7 +204,7 @@ site_epl_web/
 ├── 📁 css/                 # Styles organisés par fonction
 │   ├── base/              # Variables, reset, typography
 │   ├── components/        # Styles des composants
-│   ├── layout/            # Layout principal
+│   ├── layouts/            # Layout principal
 │   └── pages/             # Styles par page
 ├── 📁 js/                  # Scripts JavaScript modulaires
 │   ├── components/        # Logique des composants
@@ -249,10 +249,10 @@ site_epl_web/
 ##  Communauté
 
 ### 💬 Où discuter
-- **GitHub Discussions** → [Posez vos questions](https://github.com/Paskod121/site_epl_web/discussions)
-- **Email** → [contact@epl.tg](mailto:contact@epl.tg)
-- **Téléphone** → +228 90 90 90 90
-- **WhatsApp groupe** → [💻 sChtt 3 | EPL Devs](https://chat.whatsapp.com/E3iAd0g6GHv8VgfrC4qWKZ)
+- **GitHub Discussions** => [Posez vos questions](https://github.com/Paskod121/site_epl_web/discussions)
+- **Email** => [contact@epl.tg](mailto:contact@epl.tg)
+- **Téléphone** => +228 90 90 90 90
+- **WhatsApp groupe** => [💻 sChtt 3 | EPL Devs](https://chat.whatsapp.com/E3iAd0g6GHv8VgfrC4qWKZ)
 
 ### 🤝 Comment contribuer
 ```bash
