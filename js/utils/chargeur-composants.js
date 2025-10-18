@@ -1,20 +1,20 @@
 /**
  * CHARGEUR DE COMPOSANTS RÉUTILISABLES - Version Robuste
- * 
+ *
  * Ce module gère le chargement sécurisé des composants réutilisables.
  * Il inclut la gestion d'erreurs, le cache et les fallbacks.
- * 
+ *
  * FONCTIONNALITÉS :
  * - Chargement sécurisé avec gestion d'erreurs
  * - Cache intelligent pour éviter les rechargements
  * - Fallbacks automatiques en cas d'échec
  * - Chargement parallèle pour de meilleures performances
- * 
+ *
  * POUR L'ÉQUIPE :
  * - Utiliser chargeurComposants.charger() au lieu de fetch() direct
  * - Les erreurs sont gérées automatiquement
  * - Le cache améliore les performances
- * 
+ *
  * AUTEUR : sCtt3 | EPL Devs
  * DERNIÈRE MODIFICATION : 18 février 2025
  */
@@ -22,47 +22,49 @@ class ChargeurComposants {
     constructor() {
         // Cache des composants chargés pour éviter les rechargements
         this.cacheComposants = new Map();
-        
+
         // Configuration des composants disponibles
         this.composantsDisponibles = {
-            'sidebar': '/components/sidebar.html',
-            'footer': '/components/footer.html',
-            'cta': '/components/cta.html'
+            sidebar: "/components/sidebar.html",
+            footer: "/components/footer.html",
+            cta: "/components/cta.html",
         };
-        
+
         // Fallbacks en cas d'échec de chargement
         this.fallbacks = {
-            'sidebar': this.creerFallbackSidebar(),
-            'footer': this.creerFallbackFooter(),
-            'cta': this.creerFallbackCta()
+            sidebar: this.creerFallbackSidebar(),
+            footer: this.creerFallbackFooter(),
+            cta: this.creerFallbackCta(),
         };
-        
-        console.log('🔧 ChargeurComposants initialisé');
+
+        console.log("🔧 ChargeurComposants initialisé");
     }
 
     /**
      * Charge un composant de manière sécurisée
-     * 
+     *
      * @param {string} nomComposant - Nom du composant à charger
      * @param {string} conteneurId - ID du conteneur où insérer le composant
      * @param {Object} options - Options de chargement
      * @returns {Promise<boolean>} True si le chargement a réussi
      */
     async charger(nomComposant, conteneurId, options = {}) {
-        console.log(`🔍 Chargement du composant "${nomComposant}" dans "${conteneurId}"`);
-        
+        console.log(
+            `🔍 Chargement du composant "${nomComposant}" dans "${conteneurId}"`
+        );
+
         // Vérification des paramètres
         if (!this.composantsDisponibles[nomComposant]) {
             console.error(`❌ Composant "${nomComposant}" non disponible`);
             return false;
         }
-        
+
         const conteneur = document.getElementById(conteneurId);
         if (!conteneur) {
             console.error(`❌ Conteneur "${conteneurId}" non trouvé`);
             return false;
         }
-        
+
         // Vérification du cache
         if (this.cacheComposants.has(nomComposant) && !options.forceReload) {
             console.log(`📦 Utilisation du cache pour "${nomComposant}"`);
@@ -70,82 +72,91 @@ class ChargeurComposants {
             this.initialiserComposant(nomComposant, conteneur);
             return true;
         }
-        
+
         try {
             // Chargement du composant
             const contenu = await this.chargerComposant(nomComposant);
-            
+
             // Insertion dans le conteneur
             conteneur.innerHTML = contenu;
-            
+
             // Mise en cache
             this.cacheComposants.set(nomComposant, contenu);
-            
+
             // Initialisation du composant
             this.initialiserComposant(nomComposant, conteneur);
-            
+
             console.log(`✅ Composant "${nomComposant}" chargé avec succès`);
             return true;
-            
         } catch (erreur) {
-            console.error(`❌ Erreur lors du chargement de "${nomComposant}":`, erreur);
-            
+            console.error(
+                `❌ Erreur lors du chargement de "${nomComposant}":`,
+                erreur
+            );
+
             // Utilisation du fallback
             if (this.fallbacks[nomComposant]) {
                 console.log(`🔄 Utilisation du fallback pour "${nomComposant}"`);
                 conteneur.innerHTML = this.fallbacks[nomComposant];
                 return true;
             }
-            
+
             return false;
         }
     }
 
     /**
      * Charge le contenu d'un composant depuis le serveur
-     * 
+     *
      * @param {string} nomComposant - Nom du composant
      * @returns {Promise<string>} Contenu HTML du composant
      */
     async chargerComposant(nomComposant) {
         const cheminComposant = this.composantsDisponibles[nomComposant];
-        
+
         const reponse = await fetch(cheminComposant, {
-            method: 'GET',
+            method: "GET",
             headers: {
-                'Accept': 'text/html',
-                'Cache-Control': 'no-cache'
-            }
+                Accept: "text/html",
+                "Cache-Control": "no-cache",
+            },
         });
-        
+
         if (!reponse.ok) {
             throw new Error(`Erreur HTTP ${reponse.status}: ${reponse.statusText}`);
         }
-        
+
         const contenu = await reponse.text();
-        
-        if (!contenu || contenu.trim() === '') {
-            throw new Error('Composant vide reçu du serveur');
+
+        if (!contenu || contenu.trim() === "") {
+            throw new Error("Composant vide reçu du serveur");
         }
-        
+
         return contenu;
     }
 
     /**
      * Initialise un composant après son chargement
-     * 
+     *
      * @param {string} nomComposant - Nom du composant
      * @param {HTMLElement} conteneur - Conteneur du composant
      */
     initialiserComposant(nomComposant, conteneur) {
+        // Animation d'entrée du composant
+        if (typeof animateurEPL !== "undefined") {
+            setTimeout(() => {
+                animateurEPL.animerEntree(conteneur, nomComposant);
+            }, 100);
+        }
+
         switch (nomComposant) {
-            case 'sidebar':
+            case "sidebar":
                 this.initialiserSidebar(conteneur);
                 break;
-            case 'footer':
+            case "footer":
                 this.initialiserFooter(conteneur);
                 break;
-            case 'cta':
+            case "cta":
                 this.initialiserCta(conteneur);
                 break;
         }
@@ -153,103 +164,109 @@ class ChargeurComposants {
 
     /**
      * Initialise la sidebar après son chargement
-     * 
+     *
      * @param {HTMLElement} conteneur - Conteneur de la sidebar
      */
     initialiserSidebar(conteneur) {
         // Configuration des événements de la sidebar
-        const boutonsNavigation = conteneur.querySelectorAll('.sidebar-lien-navigation');
-        boutonsNavigation.forEach(bouton => {
-            bouton.addEventListener('click', function(evenement) {
+        const boutonsNavigation = conteneur.querySelectorAll(
+            ".sidebar-lien-navigation"
+        );
+        boutonsNavigation.forEach((bouton) => {
+            bouton.addEventListener("click", function (evenement) {
                 // Ajout d'un indicateur de chargement
                 const lien = evenement.currentTarget;
-                const texte = lien.querySelector('.sidebar-texte-navigation');
+                const texte = lien.querySelector(".sidebar-texte-navigation");
                 const texteOriginal = texte.textContent;
-                
-                texte.textContent = 'Chargement...';
-                lien.style.opacity = '0.7';
-                
+
+                texte.textContent = "Chargement...";
+                lien.style.opacity = "0.7";
+
                 // Restauration après un délai
                 setTimeout(() => {
                     texte.textContent = texteOriginal;
-                    lien.style.opacity = '1';
+                    lien.style.opacity = "1";
                 }, 1000);
             });
         });
-        
+
         // Configuration du bouton d'aide
-        const boutonAide = conteneur.querySelector('.sidebar-aide-bouton');
+        const boutonAide = conteneur.querySelector(".sidebar-aide-bouton");
         if (boutonAide) {
-            boutonAide.addEventListener('click', function() {
-                window.location.href = '/pages/contact.html';
+            boutonAide.addEventListener("click", function () {
+                window.location.href = "/pages/contact.html";
             });
         }
-        
-        console.log('✅ Sidebar initialisée');
+
+        console.log("✅ Sidebar initialisée");
     }
 
     /**
      * Initialise le footer après son chargement
-     * 
+     *
      * @param {HTMLElement} conteneur - Conteneur du footer
      */
     initialiserFooter(conteneur) {
         // Configuration des liens du footer
-        const liensFooter = conteneur.querySelectorAll('.footer-link');
-        liensFooter.forEach(lien => {
-            lien.addEventListener('click', function(evenement) {
+        const liensFooter = conteneur.querySelectorAll(".footer-link");
+        liensFooter.forEach((lien) => {
+            lien.addEventListener("click", function (evenement) {
                 // Ajout d'un effet visuel
-                evenement.currentTarget.style.transform = 'scale(0.95)';
+                evenement.currentTarget.style.transform = "scale(0.95)";
                 setTimeout(() => {
-                    evenement.currentTarget.style.transform = 'scale(1)';
+                    evenement.currentTarget.style.transform = "scale(1)";
                 }, 150);
             });
         });
-        
-        console.log('✅ Footer initialisé');
+
+        console.log("✅ Footer initialisé");
     }
 
     /**
      * Initialise le CTA après son chargement
-     * 
+     *
      * @param {HTMLElement} conteneur - Conteneur du CTA
      */
     initialiserCta(conteneur) {
         // Configuration des boutons CTA
-        const boutonsCta = conteneur.querySelectorAll('.bouton');
-        boutonsCta.forEach(bouton => {
-            bouton.addEventListener('click', function(evenement) {
+        const boutonsCta = conteneur.querySelectorAll(".bouton");
+        boutonsCta.forEach((bouton) => {
+            bouton.addEventListener("click", function (evenement) {
                 // Animation de clic
-                evenement.currentTarget.style.transform = 'scale(0.95)';
+                evenement.currentTarget.style.transform = "scale(0.95)";
                 setTimeout(() => {
-                    evenement.currentTarget.style.transform = 'scale(1)';
+                    evenement.currentTarget.style.transform = "scale(1)";
                 }, 150);
             });
         });
-        
-        console.log('✅ CTA initialisé');
+
+        console.log("✅ CTA initialisé");
     }
 
     /**
      * Charge plusieurs composants en parallèle
-     * 
+     *
      * @param {Array} composants - Liste des composants à charger
      * @returns {Promise<Object>} Résultats du chargement
      */
     async chargerParallele(composants) {
         console.log(`🚀 Chargement parallèle de ${composants.length} composants`);
-        
+
         const promesses = composants.map(async (composant) => {
             const { nom, conteneurId, options = {} } = composant;
             const resultat = await this.charger(nom, conteneurId, options);
             return { nom, resultat };
         });
-        
+
         const resultats = await Promise.allSettled(promesses);
-        
-        const succes = resultats.filter(r => r.status === 'fulfilled' && r.value.resultat).length;
-        console.log(`✅ ${succes}/${composants.length} composants chargés avec succès`);
-        
+
+        const succes = resultats.filter(
+            (r) => r.status === "fulfilled" && r.value.resultat
+        ).length;
+        console.log(
+            `✅ ${succes}/${composants.length} composants chargés avec succès`
+        );
+
         return resultats;
     }
 
@@ -258,12 +275,12 @@ class ChargeurComposants {
      */
     viderCache() {
         this.cacheComposants.clear();
-        console.log('🗑️ Cache des composants vidé');
+        console.log("🗑️ Cache des composants vidé");
     }
 
     /**
      * Crée un fallback pour la sidebar
-     * 
+     *
      * @returns {string} HTML de fallback
      */
     creerFallbackSidebar() {
@@ -303,7 +320,7 @@ class ChargeurComposants {
 
     /**
      * Crée un fallback pour le footer
-     * 
+     *
      * @returns {string} HTML de fallback
      */
     creerFallbackFooter() {
@@ -322,7 +339,7 @@ class ChargeurComposants {
 
     /**
      * Crée un fallback pour le CTA
-     * 
+     *
      * @returns {string} HTML de fallback
      */
     creerFallbackCta() {
@@ -350,12 +367,12 @@ class ChargeurComposants {
 const chargeurComposants = new ChargeurComposants();
 
 // Export pour utilisation en module si nécessaire
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== "undefined" && module.exports) {
     module.exports = { ChargeurComposants, chargeurComposants };
 }
 
 // Export pour utilisation globale
-if (typeof window !== 'undefined') {
+if (typeof window !== "undefined") {
     window.ChargeurComposants = ChargeurComposants;
     window.chargeurComposants = chargeurComposants;
 }

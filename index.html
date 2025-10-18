@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cta.css">
     <link rel="stylesheet" href="/css/components/indicateurs-chargement.css">
+    <link rel="stylesheet" href="/css/animations/animations-epl.css">
     <link rel="stylesheet" href="/css/layouts/main.css">
     <link rel="stylesheet" href="/css/pages/dashboard.css">
     <link rel="stylesheet" href="/css/components/hero.css">
@@ -524,19 +525,20 @@
 
     <!-- Scripts JavaScript -->
     <script src="/js/utils/themes.js"></script>
+    <script src="/js/utils/gestionnaire-animations.js"></script>
     <script src="/js/utils/chargeur-composants.js"></script>
     <script src="/js/utils/chargeur-pages.js"></script>
     <script src="/js/components/sidebar.js"></script>
     <script src="/js/pages/dashboard.js"></script>
     <script src="/js/pages/index.js"></script>
     <script src="/js/main.js"></script>
-    
+
     <!-- Initialisation optimisée de la page -->
     <script>
         // Initialise la page avec le nouveau système de chargement
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             console.log('🚀 Initialisation optimisée de la page d\'accueil');
-            
+
             // Initialise les composants avec le nouveau système
             if (typeof chargeurPages !== 'undefined') {
                 chargeurPages.initialiser('index');
