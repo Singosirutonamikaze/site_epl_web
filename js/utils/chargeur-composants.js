@@ -16,7 +16,7 @@
  * - Le cache améliore les performances
  *
  * AUTEUR : sCtt3 | EPL Devs
- * DERNIÈRE MODIFICATION : 18 février 2025
+ * DERNIÈRE MODIFICATION : 18 Octobre 2025
  */
 class ChargeurComposants {
     constructor() {
@@ -28,6 +28,9 @@ class ChargeurComposants {
             sidebar: "/components/sidebar.html",
             footer: "/components/footer.html",
             cta: "/components/cta.html",
+            navbar: "/components/navbar.html",
+            breadcrumb: "/components/breadcrumb.html",
+            modal: "/components/modal.html",
         };
 
         // Fallbacks en cas d'échec de chargement
@@ -35,6 +38,9 @@ class ChargeurComposants {
             sidebar: this.creerFallbackSidebar(),
             footer: this.creerFallbackFooter(),
             cta: this.creerFallbackCta(),
+            navbar: this.creerFallbackNavbar(),
+            breadcrumb: this.creerFallbackBreadcrumb(),
+            modal: this.creerFallbackModal(),
         };
 
         console.log("🔧 ChargeurComposants initialisé");
@@ -114,25 +120,50 @@ class ChargeurComposants {
     async chargerComposant(nomComposant) {
         const cheminComposant = this.composantsDisponibles[nomComposant];
 
-        const reponse = await fetch(cheminComposant, {
-            method: "GET",
-            headers: {
-                Accept: "text/html",
-                "Cache-Control": "no-cache",
-            },
-        });
+        // Timeout pour éviter les blocages
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => {
+            controller.abort();
+            console.warn(`⏰ Timeout lors du chargement de ${nomComposant}`);
+        }, 8000); // 8s timeout
 
-        if (!reponse.ok) {
-            throw new Error(`Erreur HTTP ${reponse.status}: ${reponse.statusText}`);
+        try {
+            const reponse = await fetch(cheminComposant, {
+                method: "GET",
+                headers: {
+                    Accept: "text/html",
+                    "Cache-Control": "no-cache",
+                },
+                signal: controller.signal,
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!reponse.ok) {
+                throw new Error(`Erreur HTTP ${reponse.status}: ${reponse.statusText}`);
+            }
+
+            const contenu = await reponse.text();
+
+            if (!contenu || contenu.trim() === "") {
+                throw new Error("Composant vide reçu du serveur");
+            }
+
+            // Validation supplémentaire du contenu
+            if (contenu.includes('<script') && contenu.includes('</script>')) {
+                console.log(`✅ Composant ${nomComposant} contient du JavaScript`);
+            }
+
+            return contenu;
+        } catch (erreur) {
+            clearTimeout(timeoutId);
+            
+            if (erreur.name === 'AbortError') {
+                throw new Error(`Timeout lors du chargement de ${nomComposant}`);
+            }
+            
+            throw erreur;
         }
-
-        const contenu = await reponse.text();
-
-        if (!contenu || contenu.trim() === "") {
-            throw new Error("Composant vide reçu du serveur");
-        }
-
-        return contenu;
     }
 
     /**
@@ -359,6 +390,58 @@ class ChargeurComposants {
                     </div>
                 </div>
             </section>
+        `;
+    }
+
+    creerFallbackNavbar() {
+        return `
+            <nav class="navbar-epl">
+                <div class="navbar-conteneur">
+                    <div class="navbar-logo">
+                        <a href="/" class="logo-lien">
+                            <span class="logo-texte">EPL</span>
+                            <span class="logo-sous-texte">École Polytechnique</span>
+                        </a>
+                    </div>
+                    <div class="navbar-menu-desktop">
+                        <a href="/" class="lien-nav-epl">Accueil</a>
+                        <a href="/formations" class="lien-nav-epl">Formations</a>
+                        <a href="/dashboard" class="lien-nav-epl">Dashboard</a>
+                        <a href="/contact" class="lien-nav-epl">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        `;
+    }
+
+    creerFallbackBreadcrumb() {
+        return `
+            <nav class="breadcrumb-epl">
+                <ol class="breadcrumb-liste">
+                    <li class="breadcrumb-item">
+                        <a href="/" class="breadcrumb-lien">
+                            <span class="icone-accueil">🏠</span>
+                            Accueil
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+        `;
+    }
+
+    creerFallbackModal() {
+        return `
+            <div class="modal-epl-overlay" style="display: none;">
+                <div class="modal-epl-conteneur">
+                    <div class="modal-epl-header">
+                        <h3 class="modal-epl-titre">Modal</h3>
+                        <button class="modal-epl-fermer">×</button>
+                    </div>
+                    <div class="modal-epl-contenu">
+                        <p>Contenu de la modal</p>
+                    </div>
+                </div>
+            </div>
         `;
     }
 }

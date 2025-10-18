@@ -2,7 +2,7 @@
 
 **À :** Toutes les équipes Devs EPL  
 **De :** sCtt3 | EPL Devs  
-**Date :** 18 février 2025  
+**Date :** 18 Octobre 2025  
 **Objet :**  Phase 1 Terminée - Migration Requise
 
 ---

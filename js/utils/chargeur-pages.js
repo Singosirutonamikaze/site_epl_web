@@ -17,17 +17,19 @@
  * - Gestion d'erreurs transparente
  *
  * AUTEUR : sCtt3 | EPL Devs
- * DERNIÈRE MODIFICATION : 18 février 2025
+ * DERNIÈRE MODIFICATION : 18 Octobre 2025
  */
 class ChargeurPages {
     constructor() {
         // Configuration des composants par page
         this.configurationPages = {
-            index: ["sidebar", "footer", "cta"],
-            dashboard: ["sidebar", "footer"],
-            formations: ["sidebar", "footer", "cta"],
-            contact: ["sidebar", "footer"],
-            about: ["sidebar", "footer"],
+            index: ["breadcrumb", "sidebar", "footer", "cta"],
+            dashboard: ["breadcrumb", "sidebar", "footer"],
+            formations: ["breadcrumb", "sidebar", "footer", "cta"],
+            contact: ["breadcrumb", "sidebar", "footer"],
+            about: ["breadcrumb", "sidebar", "footer"],
+            actualites: ["breadcrumb", "sidebar", "footer"],
+            admissions: ["breadcrumb", "sidebar", "footer"],
         };
 
         // Indicateurs de chargement
@@ -41,6 +43,9 @@ class ChargeurPages {
         };
 
         console.log("🚀 ChargeurPages initialisé");
+        
+        // Gère le redimensionnement de fenêtre
+        this.gererRedimensionnement();
     }
 
     /**
@@ -55,7 +60,14 @@ class ChargeurPages {
         const debutChargement = performance.now();
 
         // Récupère la configuration de la page
-        const composantsPage = this.configurationPages[nomPage] || [];
+        let composantsPage = this.configurationPages[nomPage] || [];
+        console.log(`🔧 Composants configurés pour "${nomPage}":`, composantsPage);
+
+        // Ajoute navbar seulement sur mobile
+        if (window.innerWidth <= 768) {
+            composantsPage = ["navbar", ...composantsPage];
+            console.log(`📱 Mobile détecté, navbar ajouté:`, composantsPage);
+        }
 
         if (composantsPage.length === 0) {
             console.warn(`⚠️ Aucun composant configuré pour la page "${nomPage}"`);
@@ -304,6 +316,38 @@ class ChargeurPages {
             tempsMoyenChargement: 0,
         };
         console.log("📊 Statistiques réinitialisées");
+    }
+
+    /**
+     * Gère le redimensionnement de fenêtre pour afficher/masquer la navbar
+     */
+    gererRedimensionnement() {
+        let timeoutRedimensionnement;
+        
+        window.addEventListener('resize', () => {
+            clearTimeout(timeoutRedimensionnement);
+            timeoutRedimensionnement = setTimeout(() => {
+                this.gererAffichageNavbar();
+            }, 250);
+        });
+    }
+
+    /**
+     * Affiche ou masque la navbar selon la taille d'écran
+     */
+    gererAffichageNavbar() {
+        const navbarContainer = document.getElementById('navbar-container');
+        if (!navbarContainer) return;
+
+        if (window.innerWidth <= 768) {
+            // Mobile : afficher navbar si pas déjà chargée
+            if (!navbarContainer.innerHTML.trim()) {
+                chargeurComposants.charger('navbar', 'navbar-container');
+            }
+        } else {
+            // Desktop : masquer navbar
+            navbarContainer.innerHTML = '';
+        }
     }
 }
 

@@ -17,7 +17,7 @@
  * - Support complet de l'accessibilité
  *
  * AUTEUR : sCtt3 | EPL Devs
- * DERNIÈRE MODIFICATION : 18 février 2025
+ * DERNIÈRE MODIFICATION : 18 Octobre 2025
  */
 class GestionnaireAnimations {
     constructor() {

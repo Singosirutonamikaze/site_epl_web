@@ -42,6 +42,7 @@
     <link rel="stylesheet" href="/css/components/footer.css">
     <link rel="stylesheet" href="/css/components/cta.css">
     <link rel="stylesheet" href="/css/components/indicateurs-chargement.css">
+    <link rel="stylesheet" href="/css/components/nouveaux-composants.css">
     <link rel="stylesheet" href="/css/animations/animations-epl.css">
     <link rel="stylesheet" href="/css/layouts/main.css">
     <link rel="stylesheet" href="/css/pages/dashboard.css">
@@ -75,6 +76,12 @@
 <body>
     <!-- Skip link pour l'accessibilité -->
     <a href="#contenu-principal" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Navbar principale -->
+    <div id="navbar-container"></div>
+
+    <!-- Breadcrumb navigation -->
+    <div id="breadcrumb-container"></div>
 
     <!-- Overlay pour sidebar mobile -->
     <div id="sidebar-overlay" class="sidebar-overlay"></div>
@@ -528,6 +535,7 @@
     <script src="/js/utils/gestionnaire-animations.js"></script>
     <script src="/js/utils/chargeur-composants.js"></script>
     <script src="/js/utils/chargeur-pages.js"></script>
+    <script src="/js/utils/gestionnaire-navigation.js"></script>
     <script src="/js/components/sidebar.js"></script>
     <script src="/js/pages/dashboard.js"></script>
     <script src="/js/pages/index.js"></script>

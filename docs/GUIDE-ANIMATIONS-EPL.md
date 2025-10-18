@@ -1,7 +1,7 @@
 # 🎨 GUIDE DES ANIMATIONS EPL
 
 **Pour :** Toutes les équipes Devs EPL  
-**Date :** 18 février 2025  
+**Date :** 18 Octobre 2025  
 **Objet :**  Animations Élégantes - Image Professionnelle
 
 ---
