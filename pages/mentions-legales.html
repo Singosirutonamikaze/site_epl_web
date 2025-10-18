@@ -4,9 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actualités - École Polytechnique de Lomé</title>
-    <meta name="description"
-        content="Découvrez les dernières actualités et événements de l'École Polytechnique de Lomé.">
+    <title>Mentions légales - École Polytechnique de Lomé</title>
+    <meta name="description" content="Mentions légales de l'École Polytechnique de Lomé.">
 
     <!-- Manifest PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -41,8 +40,11 @@
                 <div class="dev-content">
                     <div class="dev-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                            <path d="M8 6h8M8 10h8M8 14h5" />
+                            <path d="M9 12l2 2 4-4" />
+                            <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3" />
+                            <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3" />
+                            <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3" />
+                            <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3" />
                         </svg>
                     </div>
                     <h1 class="dev-titre">Page en développement</h1>
@@ -117,10 +119,10 @@
     <script src="/js/pages/dashboard.js"></script>
     <script src="/js/main.js"></script>
 
-    <!-- Script de gestion du sidebar pour actualites -->
+    <!-- Script de gestion du sidebar pour mentions-legales -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('🚀 Page Actualités chargée');
+            console.log('🚀 Page Mentions légales chargée');
 
             // Charger le composant sidebar
             fetch('/components/sidebar.html')
@@ -128,20 +130,13 @@
                 .then(html => {
                     document.getElementById('sidebar-container').innerHTML = html;
 
-                    // Marquer le lien Actualités comme actif
-                    const actualitesLink = document.querySelector('a[href="/pages/actualites.html"]');
-                    if (actualitesLink) {
-                        actualitesLink.classList.add('actif');
-                        actualitesLink.setAttribute('aria-current', 'page');
-                    }
-
                     // Initialiser le gestionnaire de sidebar
                     if (typeof SidebarManager !== 'undefined') {
                         window.sidebarManager = new SidebarManager();
                         console.log('✅ Gestionnaire de sidebar initialisé');
                     }
 
-                    console.log('✅ Page Actualités initialisée avec succès');
+                    console.log('✅ Page Mentions légales initialisée avec succès');
                 })
                 .catch(error => {
                     console.error('❌ Erreur lors du chargement du sidebar:', error);
