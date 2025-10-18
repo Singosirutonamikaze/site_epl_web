@@ -17,7 +17,7 @@
  * - Écouter l'événement 'themeChanged' pour réagir aux changements
  * 
  * AUTEUR : sCtt3 | EPL Devs
- * DERNIÈRE MODIFICATION : 22 janvier 2025
+ * DERNIÈRE MODIFICATION : 18 février 2025
  */
 class GestionnaireThemes {
     constructor() {
@@ -69,42 +69,75 @@ class GestionnaireThemes {
     }
 
     /**
-     * Applique un thème à la page
+     * Applique un thème à la page avec gestion d'erreurs robuste
      *
      * @param {string} nomTheme - 'clair', 'sombre' ou 'doux'
+     * @returns {boolean} True si le thème a été appliqué avec succès
      */
     appliquerTheme(nomTheme) {
         console.log(`🎨 [GestionnaireThemes] Application du thème "${nomTheme}"`);
 
-        // Valide que le thème existe
-        if (!this.themesDisponibles.includes(nomTheme)) {
-            console.error(`❌ Thème "${nomTheme}" invalide. Thèmes disponibles :`, this.themesDisponibles);
-            return;
-        }
-
-        // Applique l'attribut data-theme sur l'élément HTML
-        document.documentElement.setAttribute('data-theme', nomTheme);
-        console.log(`✅ [GestionnaireThemes] Attribut data-theme="${nomTheme}" appliqué`);
-
-        // Sauvegarde le choix dans le localStorage
-        localStorage.setItem('theme-prefere-epl', nomTheme);
-        console.log(`💾 [GestionnaireThemes] Thème sauvegardé dans localStorage`);
-
-        // Met à jour le thème actuel
-        this.themeActuel = nomTheme;
-
-        // Met à jour l'état visuel des boutons de thème
-        this.mettreAJourBoutonsTheme();
-
-        // Émet un événement personnalisé pour les autres composants
-        window.dispatchEvent(new CustomEvent('changement-theme', {
-            detail: {
-                theme: nomTheme,
-                timestamp: Date.now()
+        try {
+            // Valide que le thème existe
+            if (!this.themesDisponibles.includes(nomTheme)) {
+                console.error(`❌ Thème "${nomTheme}" invalide. Thèmes disponibles :`, this.themesDisponibles);
+                return false;
             }
-        }));
 
-        console.log(`🎨 Thème changé vers : ${nomTheme}`);
+            // Vérifie que le DOM est prêt
+            if (!document.documentElement) {
+                console.error('❌ Élément HTML non disponible');
+                return false;
+            }
+
+            // Applique l'attribut data-theme sur l'élément HTML
+            document.documentElement.setAttribute('data-theme', nomTheme);
+            console.log(`✅ [GestionnaireThemes] Attribut data-theme="${nomTheme}" appliqué`);
+
+            // Sauvegarde le choix dans le localStorage avec gestion d'erreur
+            try {
+                localStorage.setItem('theme-prefere-epl', nomTheme);
+                console.log(`💾 [GestionnaireThemes] Thème sauvegardé dans localStorage`);
+            } catch (erreurLocalStorage) {
+                console.warn('⚠️ Impossible de sauvegarder le thème dans localStorage:', erreurLocalStorage);
+                // Continue même si la sauvegarde échoue
+            }
+
+            // Met à jour le thème actuel
+            this.themeActuel = nomTheme;
+
+            // Met à jour l'état visuel des boutons de thème
+            this.mettreAJourBoutonsTheme();
+
+            // Émet un événement personnalisé pour les autres composants
+            try {
+                window.dispatchEvent(new CustomEvent('changement-theme', {
+                    detail: {
+                        theme: nomTheme,
+                        timestamp: Date.now()
+                    }
+                }));
+            } catch (erreurEvenement) {
+                console.warn('⚠️ Erreur lors de l\'émission de l\'événement:', erreurEvenement);
+            }
+
+            console.log(`🎨 Thème changé vers : ${nomTheme}`);
+            return true;
+
+        } catch (erreur) {
+            console.error('❌ Erreur lors de l\'application du thème:', erreur);
+            
+            // Fallback vers le thème clair en cas d'erreur
+            try {
+                document.documentElement.setAttribute('data-theme', 'clair');
+                this.themeActuel = 'clair';
+                console.log('🔄 Fallback vers le thème clair');
+            } catch (erreurFallback) {
+                console.error('❌ Erreur critique lors du fallback:', erreurFallback);
+            }
+            
+            return false;
+        }
     }
 
     /**
