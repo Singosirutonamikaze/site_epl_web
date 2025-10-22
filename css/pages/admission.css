@@ -1,4 +1,5 @@
 .dashboard__content {
+	/* Conteneur principal des pages de type dashboard (centrage + padding) */
 	padding: var(--espacement-3xl) 0;
 }
 .admissions-header {
@@ -40,6 +41,7 @@
 }
 
 .admissions-metrics {
+	/* Grille des cartes métriques (session, places, taux) */
 	margin-top: 32px;
 	display: grid;
 	grid-template-columns: 1.1fr 1fr 1fr;
@@ -47,6 +49,7 @@
 }
 
 .metric-card {
+	/* Carte réutilisable pour affichage d'informations */
 	background: var(--couleur-fond-principal);
 	border-radius: var(--rayon-lg);
 	padding: clamp(22px, 4vw, 28px);
@@ -61,6 +64,7 @@
 }
 
 .metric-card__icon {
+	/* Petite pastille icône en haut de la carte */
 	width: 40px;
 	height: 40px;
 	border-radius: 14px;
@@ -99,14 +103,15 @@
 
 .metric-card__text {
 	font-size: var(--texte-sm);
-	color: var(--couleur-texte-secondaire);
+	color: white;
 	line-height: 1.6;
 }
 
 .metric-card--primary {
-	background: linear-gradient(135deg, var(--couleur-primaire), rgba(79,70,229,0.85));
-	color: #fff;
-	border: none;
+	background-color: var(--couleur-primaire);
+	color: var(--couleur-texte-inverse);
+	/* Bord léger pour définir la carte sur fonds clairs ou texturés */
+	border: 1px solid rgba(255, 255, 255, 0.06);
 	position: relative;
 	overflow: hidden;
 }
@@ -147,6 +152,7 @@
 }
 
 .admissions-process {
+	/* Conteneur des étapes du processus */
 	margin-top: 36px;
 	background: var(--couleur-fond-principal);
 	border-radius: var(--rayon-lg);
@@ -181,6 +187,7 @@
 }
 
 .process-step {
+	/* Un bloc représentant chaque étape du process (badge, période, titre, description) */
 	display: flex;
 	flex-direction: column;
 	gap: 14px;
@@ -323,13 +330,14 @@
 		text-align: center;
 	}
 	.metric-card {
+		/* En responsive, les cartes adoptent un centrage visuel */
 		align-items: center;
 		text-align: center;
 	}
 	.metric-card__button {
 		align-self: center;
 	}
-	/* Forcer le centrage des enfants en responsive */
+	/* Forcer le centrage des enfants en responsive (sécurité contre overrides) */
 	.metric-card > *,
 	.process-step > * {
 		margin-left: auto;
