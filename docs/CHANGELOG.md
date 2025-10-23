@@ -2,6 +2,29 @@
 
 > **Historique des modifications du site web EPL**
 
+## [2.2.0] - 2025-01-15
+
+### ✨ Nouvelles fonctionnalités
+- **Documentation complète** : Présentation projet pour DG et équipes
+- **Architecture modulaire** : Documentation détaillée des choix techniques
+- **Pages documentées** : Guide complet de toutes les pages du site
+- **Méthodes de développement** : Justification des approches utilisées
+
+### 🔧 Améliorations
+- **Documentation technique** : README, CHANGELOG, COMPOSANTS mis à jour
+- **Guide de présentation** : Document professionnel pour la direction
+- **Architecture justifiée** : Explication des choix techniques
+- **Métriques de succès** : Indicateurs de performance et qualité
+
+### 📚 Documentation
+- **Présentation Projet** : `docs/PRESENTATION-PROJET-EPL.md`
+- **README** : Mise à jour complète avec architecture détaillée
+- **CHANGELOG** : Historique des versions et fonctionnalités
+- **COMPOSANTS** : Documentation technique des composants
+- **DEVELOPPEMENT** : Guide complet pour les développeurs
+
+---
+
 ## [2.1.0] - 2025-10-18
 
 ### ✨ Nouvelles fonctionnalités
