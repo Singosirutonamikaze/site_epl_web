@@ -7,7 +7,7 @@
 
 ---
 
-## 🎯 **OBJECTIFS DE LA PHASE 1**
+##  **OBJECTIFS DE LA PHASE 1**
 
 Cette phase visait à améliorer la robustesse, les performances et la gestion d'erreurs des composants réutilisables existants, sans modifier l'architecture générale du projet.
 
@@ -137,7 +137,7 @@ chargeurPages.initialiser('formations'); // sidebar + footer + cta
 
 ---
 
-## 🎯 **IMPACT POUR LES ÉQUIPES**
+##  **IMPACT POUR LES ÉQUIPES**
 
 ### **✅ Avantages Immédiats :**
 1. **Stabilité** : Plus de plantages lors du chargement des composants

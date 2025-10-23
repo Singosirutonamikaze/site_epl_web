@@ -6,7 +6,7 @@
 
 ---
 
-## 🎯 **OBJECTIFS ATTEINTS**
+##  **OBJECTIFS ATTEINTS**
 
 ### **Problèmes Résolus :**
 - ❌ **Avant** : Site plantait lors des erreurs de chargement

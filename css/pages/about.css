@@ -67,6 +67,8 @@
 
 /* Colonnes de pills (droite) */
 .about-pill-columns {
+    /* Zone contenant les 3 "pills" (Mission / Vision / Valeurs) */
+    /* Par défaut elles sont en colonne, en responsive elles deviennent des rangées */
     margin: 100px 0 0 0;
   display: flex;
   flex-direction: column;
