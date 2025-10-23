@@ -103,13 +103,13 @@
 
 .metric-card__text {
 	font-size: var(--texte-sm);
-	color: white;
+	color: var(--couleur-texte-principal);
 	line-height: 1.6;
 }
 
 .metric-card--primary {
 	background-color: var(--couleur-primaire);
-	color: var(--couleur-texte-inverse);
+	color: var(--couleur-texte-principal);
 	/* Bord léger pour définir la carte sur fonds clairs ou texturés */
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	position: relative;
@@ -222,7 +222,7 @@
 
 .process-step__text {
 	font-size: var(--texte-sm);
-	color: var(--couleur-texte-secondaire);
+	color: var(--couleur-texte-principale);
 	line-height: 1.6;
 }
 
