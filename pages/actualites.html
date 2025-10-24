@@ -33,17 +33,24 @@
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    
     }
 
     .carousel-item {
       position: relative;
       height: 550px;
+      opacity: 0.3;
+      transition: all 1s ease-in-out;
+    }
+
+    .carousel-item.active {
+      opacity: 1;
     }
 
     .carousel-item img {
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      height: 40%;
       filter: brightness(80%);
     }
 
@@ -98,6 +105,11 @@
 
     .shadow {
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important;
+    }
+    @media (max-width: 768px)  {
+      main {
+        margin-left: 0px;
+      }
     }
     
     /* Personnalisation des flèches du carrousel */
@@ -155,11 +167,11 @@
         <div class="container py-5">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <img src="images/actu1.jpg" class="img-fluid rounded mb-4 shadow" alt="Cérémonie de Remise des Diplômes">
-              <h5 class="fw-bold">🎓 Cérémonie de Remise des Diplômes 2024</h5>
-              <p class="text-secondary small">Publié le 12 Juillet 2024</p>
+              <img src="../assets/images/actu1.png" class="actu1 img-fluid rounded mb-4 shadow" alt="Cérémonie de Remise des Diplômes">
+              <h5 class="fw-bold">🎓 Cérémonie d'Accueil des étudiants de l 'EPL 2025-2026 </h5>
+              <p class="text-secondary small">Le 15 Octobre 2025</p>
               <p class="text-secondary">
-                L'École Polytechnique de Lomé a célébré la promotion 2024 lors d’une cérémonie riche en émotions et en réussite...
+                L'École Polytechnique de Lomé a officielement lancé sa rentrée académique 2025-2026...
               </p>
               <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
             </div>
@@ -172,11 +184,11 @@
         <div class="container py-5">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <img src="images/actu2.jpg" class="img-fluid rounded mb-4 shadow" alt="Inauguration du nouveau bâtiment">
-              <h5 class="fw-bold">🏗️ Inauguration du nouveau bâtiment de recherche</h5>
-              <p class="text-secondary small">Publié le 20 Juin 2024</p>
+              <img src="../assets/images/actu2.png" class="img-fluid rounded mb-4 shadow" alt="Inauguration du nouveau bâtiment">
+              <h5 class="fw-bold">Renforcement de l'Environement Technologique à L' EPL </h5>
+              <p class="text-secondary small">Le 17 Octobre 2025</p>
               <p class="text-secondary">
-                Le nouveau centre de recherche en technologies innovantes a été officiellement inauguré par le Ministre de l’Enseignement supérieur...
+                L'EPL à l'honneur de recevoir une Délégation Chinoise lors d'une Cérémonie Officielle de remise d'une salle préfabriquée...
               </p>
               <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
             </div>
@@ -189,11 +201,11 @@
         <div class="container py-5">
           <div class="row justify-content-center">
             <div class="col-md-8 text-center">
-              <img src="images/actu3.jpg" class="img-fluid rounded mb-4 shadow" alt="Partenariat international">
-              <h5 class="fw-bold">🌍 Signature d’un partenariat avec l’Université de Montréal</h5>
-              <p class="text-secondary small">Publié le 02 Juin 2024</p>
+              <img src="../assets/images/actu3.png" class="img-fluid rounded mb-4 shadow" alt="Partenariat international">
+              <h5 class="fw-bold">Appel à Soumission de sujets et aux partenaires - 2 ème Edition</h5>
+              <p class="text-secondary small">Date limite : Le 03 Octobre 2025</p>
               <p class="text-secondary">
-                Dans le cadre du renforcement de la coopération académique, un nouveau partenariat a été signé entre l’EPL et l’Université de Montréal...
+                  Vous etes une entreprise , une istitution ou un porteur de projet à la recherche de solutois concrètes à des problèmes...
               </p>
               <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
             </div>
