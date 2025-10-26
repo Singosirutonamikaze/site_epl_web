@@ -85,11 +85,31 @@
                 <!-- Bloc héro (image + histoire) -->
                 <article class="about-hero">
                     <div class="about-hero__media" aria-label="Zone image à personnaliser">
-                        <img src="../assets/EPL_face.webp" alt="">
+                        <img src="../assets/EPL_face.webp" alt="Image de l'École Polytechnique de Lomé">
                     </div>
                     <h2 class="about-hero__title">Notre Histoire</h2>
-                    <p class="about-hero__text">Fondée en 1970, l'École Polytechnique de Lomé est la première institution d'enseignement supérieur technique du Togo. Nous formons des ingénieurs de haut niveau capables de relever les défis du développement.</p>
-                    <p class="about-hero__text">Avec plus de 50 ans d'expérience, l'EPL s'est imposée comme un centre d'excellence en Afrique de l'Ouest, formant des milliers d'ingénieurs qui contribuent au développement du continent.</p>
+                    <div id="histoire-content" class="about-hero__summary expandable" aria-hidden="false">
+                        <p class="about-hero__text">
+                            L’Ecole polytechnique de Lomé (EPL), fruit de la fusion de l’Ecole nationale supérieure d’ingénieurs et du Centre informatique et de calcul,
+                            ouvre ses portes cette année académique 2022-2023 à l'Université de Lomé. 
+                            En effet, la création de l’EPL vise à offrir des formations dans les parcours Licence-Master-Doctorat (LMD) et des doubles diplômes dans le domaine des sciences de la technologie et du génie des technologies émergentes
+                            <span id="dots">...</span>
+                            <p class="about-hero__text" id="more" style="display: none;">
+                                De fait, la fusion permet d’intégrer « différentes branches techniques de formation d’ingénieurs de terrain
+                                à différents grades pour les besoins de développement industriel » du pays.
+                                L’objectif est de contribuer à l’économie de la connaissance et favoriser le développement industriel.
+                                La naissance de ce centre s’inscrit dans le cadre de la feuille de route gouvernementale, relative à l’amélioration de la qualité de l’enseignement, à la réforme de la politique d’orientation 
+                                et à la promotion de la formation professionnelle vers les métiers prioritaires.<br>
+                                Avec plus de 50 ans d'expérience, l'EPL s'est imposée comme un centre d'excellence en Afrique de l'Ouest, formant des milliers d'ingénieurs qui contribuent au développement du continent.                                
+                            </p>
+                            <button class="about-hero__toggle" onclick="ToggleText()" id="btn" aria-expanded="false" aria-controls="histoire-content">
+                                Voir plus
+                            </button>
+
+                        </p>            
+                    </div>
+
+
                 </article>
 
                 <!-- Colonnes de 'pills' : mission, vision, valeurs -->
@@ -206,6 +226,7 @@
     <script src="/js/utils/chargeur-pages.js"></script>
     <script src="/js/utils/gestionnaire-animations.js"></script>
     <script src="/js/utils/gestionnaire-navigation.js"></script>
+    <script src="/js/utils/voir_plus.js"></script>
     <script src="/js/components/sidebar.js"></script>
     <script src="/js/components/cta.js"></script>
     <script src="/js/pages/dashboard.js"></script>
