@@ -82,6 +82,7 @@ label {
   background-color: var(--couleur-fond-hover);
   box-shadow: 0 0 0 0.2rem var(--couleur-accent-transparent);
 }
+
 #formulaire-contact .form-control::placeholder {
   color: var(--couleur-texte-tertiaire);
 }
@@ -102,6 +103,7 @@ label {
   .info-box {
     background-color: var(--couleur-card-fond);
     border-radius: 12px;
+    border: 2px solid var(--couleur-bordure);
   }
 
   .btn-outline-primary,
