@@ -6,166 +6,226 @@
   <title>Actualités - École Polytechnique de Lomé</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
   <style>
     body {
-      background-color: #f8fafc;
-      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f6fa;
+      font-family: "Poppins", sans-serif;
     }
+    
+    /* Section titre */
     main {
-        margin-left: 280px;
-      }
-      
-    .section-title {
-      text-align: left;
-      margin-bottom: 10px;
-      font-weight: 700;
-      color: #1e293b;
+      margin-left: 280px;
     }
-    .section-subtitle {
-      color: #475569;
-      margin-bottom: 40px;
-      font-size: 1rem;
+    section {
+      background-color: #f8f9fa;
     }
-    .news-card {
-      border: none;
-      border-radius: 16px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      transition: all 0.3s ease;
+    
+    h2 {
+      color: #0d6efd;
+    }
+    
+    /* Carrousel */
+   
+    .carousel {
+      max-width: 1200px;
+      margin: 40px auto;
+      border-radius: 15px;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    
     }
-    .news-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+
+    .carousel-item {
+      position: relative;
+      height: 550px;
+      opacity: 0.3;
+      transition: all 1s ease-in-out;
     }
-    .news-card img {
-      height: 230px;
+
+    .carousel-item.active {
+      opacity: 1;
+    }
+
+    .carousel-item img {
       object-fit: cover;
+      width: 100%;
+      height: 40%;
+      filter: brightness(80%);
     }
-    .card-body {
-      padding: 20px;
+
+    /* Effet de flou en bas de l’image */
+    .carousel-item::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      backdrop-filter: blur(5px);
     }
-    .badge-custom {
-      background-color: #e0e7ff;
-      color: #1d4ed8;
-      font-size: 0.8rem;
-      border-radius: 8px;
-      padding: 4px 10px;
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      z-index: 10;
+    }
+
+    .carousel-caption h5 {
+      font-size: 1.8rem;
       font-weight: 600;
+      text-shadow: 1px 1px 10px rgba(0,0,0,0.6);
     }
-    .card-date {
-      color: #64748b;
-      font-size: 0.9rem;
-      margin-left: 8px;
+
+    .carousel-caption p {
+      font-size: 1rem;
+      max-width: 700px;
+      margin: 10px auto;
+      text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
     }
-    .card-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-top: 10px;
-      color: #1e293b;
-    }
-    .card-text {
-      color: #475569;
-      font-size: 0.95rem;
-      margin-top: 5px;
-    }
-    .card-link {
-      color: #2563eb;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      margin-top: 10px;
+
+    .btn-lire-plus {
+      background-color: #ff7b00;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
       transition: 0.3s;
     }
-    .card-link:hover {
-      color: #1e40af;
-      text-decoration: underline;
+
+    .btn-lire-plus:hover {
+      background-color: #ff5400;
+      transform: scale(1.05);
     }
-    .card-link i {
-      margin-left: 5px;
+
+    .shadow {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1) !important;
     }
-    footer {
-      background-color: #f1f5f9;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #475569;
-      margin-top: 60px;
-      border-top: 1px solid #e2e8f0;
+    @media (max-width: 768px)  {
+      main {
+        margin-left: 0px;
+      }
     }
-    footer a {
-      color: #2563eb;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    
+    /* Personnalisation des flèches du carrousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(13, 110, 253, 0.9); /* Bleu Bootstrap */
+  border-radius: 50%;                        /* Rondes */
+  width: 45px;                               /* Taille plus grande */
+  height: 45px;
+  background-size: 60% 60%;                  /* Taille de la flèche interne */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: all 0.3s ease;
+}
+
+/* Effet au survol */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: rgba(0, 98, 255, 1);     /* Bleu plus vif au hover */
+  transform: scale(1.1);
+}
+
+/* Supprimer le filtre inversé par défaut si présent */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: none !important;
+}
+
   </style>
+
 </head>
+
+
 <body>
     <main>
   <div class="container py-5">
     <h2 class="section-title">Actualités</h2>
     <p class="section-subtitle">Les dernières nouvelles de l’École Polytechnique de Lomé</p>
 
-    <div class="row g-4">
-      <!-- Carte 1 -->
-      <div class="col-md-6">
-        <div class="card news-card">
-          <img src="https://images.unsplash.com/photo-1604604953907-3ed4d83f5e5f?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Remise de diplômes">
-          <div class="card-body">
-            <span class="badge-custom">Événement</span>
-            <span class="card-date"><i class="bi bi-calendar"></i> 15 Septembre 2024</span>
-            <h5 class="card-title">Cérémonie de Remise des Diplômes 2024</h5>
-            <p class="card-text">Plus de 450 nouveaux ingénieurs ont reçu leur diplôme lors d'une cérémonie grandiose.</p>
-            <a href="#" class="card-link">Lire plus <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 2 -->
-      <div class="col-md-6">
-        <div class="card news-card">
-          <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Laboratoire de robotique">
-          <div class="card-body">
-            <span class="badge-custom" style="background-color:#dbeafe;color:#1e40af;">Infrastructure</span>
-            <span class="card-date"><i class="bi bi-calendar"></i> 10 Août 2024</span>
-            <h5 class="card-title">Nouveau Laboratoire de Robotique</h5>
-            <p class="card-text">L’EPL inaugure un laboratoire de robotique ultramoderne équipé des dernières technologies.</p>
-            <a href="#" class="card-link">Lire plus <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 3 -->
-      <div class="col-md-6">
-        <div class="card news-card">
-          <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa8f?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Université de Grenoble">
-          <div class="card-body">
-            <span class="badge-custom" style="background-color:#dbeafe;color:#1d4ed8;">Partenariat</span>
-            <span class="card-date"><i class="bi bi-calendar"></i> 5 Juillet 2024</span>
-            <h5 class="card-title">Partenariat avec l’Université de Grenoble</h5>
-            <p class="card-text">Signature d'un accord de coopération pour les échanges d'étudiants et de professeurs.</p>
-            <a href="#" class="card-link">Lire plus <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Carte 4 -->
-      <div class="col-md-6">
-        <div class="card news-card">
-          <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Compétition de Programmation">
-          <div class="card-body">
-            <span class="badge-custom" style="background-color:#e0f2fe;color:#0369a1;">Compétition</span>
-            <span class="card-date"><i class="bi bi-calendar"></i> 20 Juin 2024</span>
-            <h5 class="card-title">Compétition de Programmation 2024</h5>
-            <p class="card-text">L’équipe de l’EPL remporte la première place au hackathon national des écoles d’ingénieurs.</p>
-            <a href="#" class="card-link">Lire plus <i class="bi bi-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+     <!-- ===== CARROUSEL ===== -->
+  <div id="actualitesCarousel" class="carousel slide" data-bs-ride="carousel">
+    
+    <!-- Indicateurs -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#actualitesCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#actualitesCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#actualitesCarousel" data-bs-slide-to="2"></button>
     </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="../assets/images/actu1.png" class="actu1 img-fluid rounded mb-4 shadow" alt="Cérémonie de Remise des Diplômes">
+              <h5 class="fw-bold">🎓 Cérémonie d'Accueil des étudiants de l 'EPL 2025-2026 </h5>
+              <p class="text-secondary small">Le 15 Octobre 2025</p>
+              <p class="text-secondary">
+                L'École Polytechnique de Lomé a officielement lancé sa rentrée académique 2025-2026...
+              </p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="../assets/images/actu2.png" class="img-fluid rounded mb-4 shadow" alt="Inauguration du nouveau bâtiment">
+              <h5 class="fw-bold">Renforcement de l'Environement Technologique à L' EPL </h5>
+              <p class="text-secondary small">Le 17 Octobre 2025</p>
+              <p class="text-secondary">
+                L'EPL à l'honneur de recevoir une Délégation Chinoise lors d'une Cérémonie Officielle de remise d'une salle préfabriquée...
+              </p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <img src="../assets/images/actu3.png" class="img-fluid rounded mb-4 shadow" alt="Partenariat international">
+              <h5 class="fw-bold">Appel à Soumission de sujets et aux partenaires - 2 ème Edition</h5>
+              <p class="text-secondary small">Date limite : Le 03 Octobre 2025</p>
+              <p class="text-secondary">
+                  Vous etes une entreprise , une istitution ou un porteur de projet à la recherche de solutois concrètes à des problèmes...
+              </p>
+              <a href="#" class="btn btn-primary btn-sm mt-2">Lire plus <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contrôles -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#actualitesCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#actualitesCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </div>
 </main>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

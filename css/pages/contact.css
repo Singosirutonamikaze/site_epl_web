@@ -1,0 +1,120 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  main {
+    margin-left: 280px;
+  }
+
+  /* --- Section 1 --- */
+  i {
+    background-color: var(--couleur-fond-tertiaire);
+    border-radius: 4px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-right: 12px;
+    border: 2px solid var(--couleur-bordure);
+
+  }
+
+   p {
+    margin-left: 60px;
+    color: var(--couleur-texte-principal);
+  }
+  b { 
+    padding-top: 0px;
+  }
+
+  .contact-card {
+    background: var(--couleur-card-fond);
+    border-radius: 12px;
+    border: 2px solid var(--couleur-bordure);
+    transition: all 0.3s ease;
+    
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px var(--couleur-card-ombre);
+  }
+  
+  .icon-contact {
+    font-size: 1.5rem;
+    color: #0d6efd;
+    margin-bottom: 10px;
+
+  }
+  
+  /* --- Section 2 --- */
+ 
+
+/* Carte du formulaire */
+#formulaire-contact .card {
+  background-color: var(--couleur-card-fond);
+  box-shadow: var(--couleur-card-ombre);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  color: var(--couleur-texte-principal);
+}
+
+.card:hover {
+  box-shadow: var(--couleur-card-hover);
+  transform: translateY(-3px);
+}
+
+/* Labels */
+label {
+  color: var(--couleur-texte-principal);
+  font-weight: 500;
+}
+
+/* Champs de saisie */
+#formulaire-contact .form-control {
+  background-color: var( --couleur-fond-tertiaire);
+  border: 1px solid var(--couleur-bordure);
+  color: var(--couleur-texte-principal);
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+#formulaire-contact .form-control:focus {
+  border-color: var(--couleur-bordure-focus);
+  background-color: var(--couleur-fond-hover);
+  box-shadow: 0 0 0 0.2rem var(--couleur-accent-transparent);
+}
+
+#formulaire-contact .form-control::placeholder {
+  color: var(--couleur-texte-tertiaire);
+}
+
+/* Bouton d’envoi */
+.btn-primary {
+  background-color: var(--couleur-accent);
+  border: none;
+  color: var(--couleur-texte-principal);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--couleur-accent-hover);
+  transform: translateY(-2px);
+}
+  
+  .info-box {
+    background-color: var(--couleur-card-fond);
+    border-radius: 12px;
+    border: 2px solid var(--couleur-bordure);
+  }
+
+  .btn-outline-primary,
+  .btn-outline-info,
+  .btn-outline-secondary {
+    border-radius: 8px;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 768px)  {
+    main {
+      margin-left: 0px;
+    } 
+ }
